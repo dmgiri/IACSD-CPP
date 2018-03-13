@@ -9,16 +9,20 @@
 #include "Programmer.h"
 #include "SalesMgr.h"
 #include <fstream>
+#include<string>
 #include <ios>
 int menu();
 int field();
 int main(int argc, char **argv) {
 	fstream text;
 	int id,choice;
-	string name , type;
+	string name, type;
 	Admin admin;
-	Programmer prorammer;
-	SalesMgr salesm;
+	Programmer programmer;
+	SalesMgr salesmgr;
+	string line;
+	ifstream myfile("data.txt");
+
 	while(1){
 		switch(menu()){
 		case 1:
@@ -26,21 +30,57 @@ int main(int argc, char **argv) {
 				switch(choice){
 				case 1:
 					cout<<"enter name"<<endl;
-					cin >>name;
+					cin >> name;
 					cout<<"enter id"<<endl;
 					cin>>id;
 					admin.setName(name);
 					admin.setId(id);
+					admin.setType("Admin");
 					text.open("data.txt",ios::app);
-					text<<admin.getName()<<" "<<admin.getId()<<" "<<admin;
+					text<<admin.getName()<<" "<<admin.getId()<<" "<<admin.getType()<<endl;
 					text.close();
 					cout<<"field inserted"<<endl;
 					break;
-				case 2: break;
+				case 2:
+					cout << "enter name" << endl;
+					cin >> name;
+					cout << "enter id" << endl;
+					cin >> id;
+					programmer.setName(name);
+					programmer.setId(id);
+					programmer.setType("Programmer");
+					text.open("data.txt", ios::app);
+					text << programmer.getName() << " " << programmer.getId() << " " << programmer.getType()<<endl;
+					text.close();
+					cout << "field inserted" << endl;
+					break;
+				case 3:
+					cout << "enter name" << endl;
+					cin >> name;
+					cout << "enter id" << endl;
+					cin >> id;
+					salesmgr.setName(name);
+					salesmgr.setId(id);
+					salesmgr.setType("SalesMgr");
+					text.open("data.txt", ios::app);
+					text << salesmgr.getName() << " " << salesmgr.getId() << " " << salesmgr.getType()<<endl;
+					text.close();
+					cout << "field inserted" << endl;
+					break;
 				}
 		case 2:break;
 		case 3:break;
-		case 4:break;
+		case 4:	
+			if (myfile.is_open())
+			{
+				while (getline(myfile, line))
+				{
+					cout << line << endl;
+				}
+				myfile.close();
+			}
+
+			break;
 		case 5:break;
 		case 6:break;
 		case 7:break;

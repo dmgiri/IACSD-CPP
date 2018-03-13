@@ -14,6 +14,3 @@ Admin::Admin() {
 Admin::~Admin() {
 }
 
-void Admin::set(){
-	this->setType("Admin");
-}

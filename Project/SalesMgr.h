@@ -14,7 +14,6 @@ class SalesMgr: public Employ {
 public:
 	SalesMgr();
 	~SalesMgr();
-	void setType();
 };
 
 #endif /* SALESMGR_H_ */

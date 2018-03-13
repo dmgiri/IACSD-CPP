@@ -15,8 +15,3 @@ SalesMgr::~SalesMgr() {
 
 }
 
-void SalesMgr::setType(){
-	this->type="SalesMgr";
-}
-
-

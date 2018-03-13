@@ -14,7 +14,7 @@ class Admin: public Employ {
 public:
 	Admin();
 	~Admin();
-	void setType();
+	void type(const string &);
 };
 
 #endif /* ADMIN_H_ */

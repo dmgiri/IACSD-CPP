@@ -14,6 +14,7 @@ class Programmer: public Employ {
 public:
 	Programmer();
 	~Programmer();
+	void type(const string &);
 };
 
 #endif /* PROGRAMMER_H_ */
